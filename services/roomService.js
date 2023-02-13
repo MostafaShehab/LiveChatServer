@@ -69,7 +69,7 @@ module.exports.exitRoom = (socket, data, allUsers) => {
     return allUsers;
 }
 
-module.exports.disconnect = (socket, allUsers) => {
+module.exports.disconnect = (socket, user, allUsers) => {
     allUsers = leaveRoom(socket.id, allUsers);
     room = user.room;
     chatRoomUsers = allUsers.filter((user) => user.room === room);

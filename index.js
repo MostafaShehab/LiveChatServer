@@ -58,7 +58,7 @@ io.on('connection', (socket) => {
     socket.on('disconnect', () => {
         let user = allUsers.find((user) => user.id == socket.id);
         if (user?.username) {
-            allUsers = disconnect(socket, allUsers);
+            allUsers = disconnect(socket, user, allUsers);
         }
     });
 });
